@@ -19,7 +19,7 @@ const server = browserSync.create()
 
 const serverInit = (done) => {
   server.init({
-    proxy: 'http://demosite.local/'
+    proxy: 'http://127.0.0.1:8080/anchor/'
   });
   done();
 }
@@ -70,7 +70,6 @@ gulp.task('scripts-dev', ()=>{
         })
         .pipe(source('scripts.js'))
         .pipe(buffer())
-        .pipe(uglify())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('./assets/dist/js'));
