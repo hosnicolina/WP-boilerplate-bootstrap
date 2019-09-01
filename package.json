@@ -4,7 +4,8 @@
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "index.js",
   "scripts": {
-    "sycn": "gulp browser-sync"
+    "sync": "gulp browser-sync",
+    "script": "gulp scripts"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "cssnano": "^4.1.8",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",

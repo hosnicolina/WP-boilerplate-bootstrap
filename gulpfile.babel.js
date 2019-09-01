@@ -75,6 +75,19 @@ gulp.task('scripts-dev', ()=>{
         .pipe(gulp.dest('./assets/dist/js'));
 });
 
+gulp.task("scripts", () => {
+  let scripts = [
+    "./node_modules/popper.js/dist/umd/popper.min.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "./assets/dist/js/scripts.js"
+  ];
+  return gulp
+    .src(scripts, { allowEmpty: true })
+    .pipe(concat("scripts.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("./assets/dist/js"));
+});
+
 gulp.task('style-dev', ()=>{
     return gulp.src('./assets/src/sass/style.scss')
     .pipe(sourcemaps.init({ loadMaps : true}))
