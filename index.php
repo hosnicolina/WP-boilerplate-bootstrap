@@ -15,19 +15,11 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area container">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area row">
+		<main id="main" class="site-main col-1g">
 
 		<?php
 		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -42,8 +34,6 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -52,8 +42,9 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+		<?php get_sidebar(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

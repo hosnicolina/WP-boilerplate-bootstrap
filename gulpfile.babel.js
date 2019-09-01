@@ -11,6 +11,7 @@ import babelify from "babelify";
 import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import uglify from "gulp-uglify";
+import concat from 'gulp-concat';
 
 const server = browserSync.create()
 

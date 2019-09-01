@@ -42,6 +42,17 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Bootstrap Nav.
+ */
+require get_template_directory() . '/inc/bs4-nav.php';
+
+/**
+ * Widget Area.
+ */
+require get_template_directory() . '/inc/widget-area.php';
+
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {

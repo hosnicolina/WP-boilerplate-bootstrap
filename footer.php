@@ -11,10 +11,10 @@
 
 ?>
 
-	</div><!-- #content -->
+</div> <!-- .content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		<div class="site-info container text-center p-3">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'boilerplate-general-boostrap' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -28,7 +28,7 @@
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+</main><!-- #main -->
 
 <?php wp_footer(); ?>
 

@@ -9,51 +9,25 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('mb-3'); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
+		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+		<div class="entry-meta">
+			<?php
+			boilerplate_general_boostrap_posted_on();
+			boilerplate_general_boostrap_posted_by();
 			?>
-			<div class="entry-meta">
-				<?php
-				boilerplate_general_boostrap_posted_on();
-				boilerplate_general_boostrap_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		</div><!-- .entry-meta -->
+		
 	</header><!-- .entry-header -->
 
 	<?php boilerplate_general_boostrap_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'boilerplate-general-boostrap' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'boilerplate-general-boostrap' ),
-			'after'  => '</div>',
-		) );
-		?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php boilerplate_general_boostrap_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

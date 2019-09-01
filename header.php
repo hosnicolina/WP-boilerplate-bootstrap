@@ -21,38 +21,35 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'boilerplate-general-boostrap' ); ?></a>
+<main id="main" class="site">
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$boilerplate_general_boostrap_description = get_bloginfo( 'description', 'display' );
-			if ( $boilerplate_general_boostrap_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $boilerplate_general_boostrap_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'boilerplate-general-boostrap' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+	<header id="masthead" class="site-header bg-primary">
+		<nav class=" container navbar navbar-expand-md navbar-dark bg-primary">
+			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo('name'); ?></a>
+			<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+				<!-- The WordPress Menu goes here -->
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'menu-1',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id'    => 'mainMenu',
+						'menu_class'      => 'navbar-nav ml-auto',
+						'fallback_cb'     => '',
+						'menu_id'         => 'mainMenu',
+						'depth'           => 2,
+						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+					)
+				); ?>
+		</nav>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+<div class="container my-5">
+
+
+
+
