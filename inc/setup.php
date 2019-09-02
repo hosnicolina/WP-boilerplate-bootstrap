@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'boilerplate_general_boostrap_setup' ) ) :
+if ( ! function_exists( 'blogviral_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -8,14 +8,14 @@ if ( ! function_exists( 'boilerplate_general_boostrap_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function boilerplate_general_boostrap_setup() {
+	function blogviral_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on boilerplate general boostrap, use a find and replace
-		 * to change 'boilerplate-general-boostrap' to the name of your theme in all the template files.
+		 * If you're building a theme based on new blog viral, use a find and replace
+		 * to change 'blogviral' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'boilerplate-general-boostrap', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'blogviral', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -37,7 +37,7 @@ if ( ! function_exists( 'boilerplate_general_boostrap_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'boilerplate-general-boostrap' ),
+			'menu-1' => esc_html__( 'Primary', 'blogviral' ),
 		) );
 
 		/*
@@ -53,7 +53,7 @@ if ( ! function_exists( 'boilerplate_general_boostrap_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'boilerplate_general_boostrap_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'blogviral_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -74,4 +74,4 @@ if ( ! function_exists( 'boilerplate_general_boostrap_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'boilerplate_general_boostrap_setup' );
+add_action( 'after_setup_theme', 'blogviral_setup' );

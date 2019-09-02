@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package boilerplate_general_boostrap
+ * @package blogviral
  */
 
 get_header();

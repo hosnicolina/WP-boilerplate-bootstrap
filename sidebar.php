@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package boilerplate_general_boostrap
+ * @package blogviral
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

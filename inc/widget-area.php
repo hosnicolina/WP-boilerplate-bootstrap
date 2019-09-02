@@ -5,16 +5,16 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function boilerplate_general_boostrap_widgets_init() {
+function blogviral_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'boilerplate-general-boostrap' ),
+		'name'          => esc_html__( 'Sidebar', 'blogviral' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'boilerplate-general-boostrap' ),
+		'description'   => esc_html__( 'Add widgets here.', 'blogviral' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'boilerplate_general_boostrap_widgets_init' );
+add_action( 'widgets_init', 'blogviral_widgets_init' );
 

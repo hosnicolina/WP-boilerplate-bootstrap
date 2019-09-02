@@ -1,8 +1,8 @@
 <?php
 /**
- * boilerplate general boostrap Theme Customizer
+ * new blog viral Theme Customizer
  *
- * @package boilerplate_general_boostrap
+ * @package blogviral
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function boilerplate_general_boostrap_customize_register( $wp_customize ) {
+function blogviral_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -18,22 +18,22 @@ function boilerplate_general_boostrap_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'boilerplate_general_boostrap_customize_partial_blogname',
+			'render_callback' => 'blogviral_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'boilerplate_general_boostrap_customize_partial_blogdescription',
+			'render_callback' => 'blogviral_customize_partial_blogdescription',
 		) );
 	}
 }
-add_action( 'customize_register', 'boilerplate_general_boostrap_customize_register' );
+add_action( 'customize_register', 'blogviral_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function boilerplate_general_boostrap_customize_partial_blogname() {
+function blogviral_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -42,14 +42,14 @@ function boilerplate_general_boostrap_customize_partial_blogname() {
  *
  * @return void
  */
-function boilerplate_general_boostrap_customize_partial_blogdescription() {
+function blogviral_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function boilerplate_general_boostrap_customize_preview_js() {
-	wp_enqueue_script( 'boilerplate-general-boostrap-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function blogviral_customize_preview_js() {
+	wp_enqueue_script( 'blogviral-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'boilerplate_general_boostrap_customize_preview_js' );
+add_action( 'customize_preview_init', 'blogviral_customize_preview_js' );

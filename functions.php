@@ -1,10 +1,10 @@
 <?php
 /**
- * boilerplate general boostrap functions and definitions
+ * new blog viral functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package boilerplate_general_boostrap
+ * @package blogviral
  */
 
 if ( ! defined('ABSPATH') ) {
